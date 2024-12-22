@@ -5,6 +5,7 @@ pub struct CursorPlugin;
 impl Plugin for CursorPlugin  {
     fn build(&self, app: &mut App) {
         app.init_resource::<Cursor>()
+            .add_systems(Update, update_cursor_locking)
             .add_systems(Startup, init_cursor_properties);
     }
 }
